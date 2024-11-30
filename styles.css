@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  section {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Efecto 1: Skew */
+  .skew-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .skew {
+    width: 150px;
+    height: 100px;
+    background-color: coral;
+    transition: transform 0.5s ease;
+  }
+
+  .skew:hover {
+    transform: skewX(20deg);
+  }
+
+  .skew-double {
+    width: 150px;
+    height: 100px;
+    background-color: lightcoral;
+    transition: transform 0.5s ease, scale 0.5s ease;
+  }
+
+  .skew-double:hover {
+    transform: skew(20deg, 15deg) scale(1.5);
+  }
+
+  /* Efecto 2: Transform Origin */
+  .origin-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .origin {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    transition: transform 0.5s ease;
+  }
+
+  .origin-45,
+  .origin-22,
+  .origin-90 {
+    transform-origin: center;
+  }
+
+  .origin-45:hover {
+    transform: rotate(45deg);
+  }
+
+  .origin-22:hover {
+    transform: rotate(22deg);
+  }
+
+  .origin-90:hover {
+    transform: rotate(90deg);
+  }
+
+  /* Efecto 3: Multiple */
+  .multiple-container {
+    position: relative;
+    width: 120px; /* 100px + 10px * 2 */
+    height: 120px; /* 100px + 10px * 2 */
+  }
+
+  .multiple {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border: 5px solid green;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 1.5s ease;
+  }
+
+  .dotlane {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 160px;
+    height: 160px;
+    border: 5px dotted green;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .multiple:hover {
+    transform: rotate(360deg) scale(2, 1.5);
+  }
+
+  /* Efecto 4: Flip */
+  body {
+    perspective: 1000px;
+  }
+
+  .flip-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+  }
+
+  .flip-container:hover {
+    transform: rotateY(180deg);
+  }
+
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .front {
+    background-color: lightblue;
+  }
+
+  .back {
+    background-color: lightcoral;
+    transform: rotateY(180deg);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
